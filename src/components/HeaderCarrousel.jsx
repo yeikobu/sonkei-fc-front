@@ -78,7 +78,7 @@ const HeaderCarrousel = () => {
 
   // Renderiza el carrusel de imágenes
   return (
-    <section className="relative overflow-hidden max-h-[800px] w-full">
+    <section className="relative overflow-hidden w-full" id="inicio">
       <div 
         className="flex transition-transform duration-500 ease-in-out"
         style={{ transform: `translateX(-${currentIndex * 100}%)` }}
@@ -87,7 +87,7 @@ const HeaderCarrousel = () => {
           <img
             key={img.id}
             src={img.img_url}
-            className="flex-shrink-0 w-full h-[800px] object-cover"
+            className="flex-shrink-0 w-full max-h-[800px] object-cover"
             alt={`Slide ${currentIndex}`}
           />
         ))}
