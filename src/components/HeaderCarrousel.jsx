@@ -1,4 +1,6 @@
 import { useState, useEffect } from "react";
+import ButtonLeft from '../assets/chevron-left.svg'
+import ButtonRight from '../assets/chevron-right.svg'
 
 /**
  * HeaderCarrousel Component
@@ -31,6 +33,7 @@ const HeaderCarrousel = () => {
    */
     const getImages = async () => {
       try { 
+        setLoading(true);
         const response = await fetch('http://localhost/sonkei-fc-backend/controller/CarrouselController.php');
 
         if (!response.ok) {
@@ -76,6 +79,16 @@ const HeaderCarrousel = () => {
     return <div>Error: {error.message}</div>;
   }
 
+  // Función para mostrar la imagen anterior
+  const prevImage = () => {
+    setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
+  };
+
+  // Función para mostrar la siguiente imagen
+  const nextImage = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+  };
+
   // Renderiza el carrusel de imágenes
   return (
     <section className="relative overflow-hidden w-full" id="inicio">
@@ -92,6 +105,10 @@ const HeaderCarrousel = () => {
           />
         ))}
       </div>
+
+      {/* Botones de siguiente y atrás */}
+      <ButtonLeft className="size-16 text-white absolute top-1/2 left-4 transform -translate-y-1/2 rounded-full p-2 transition hover:scale-110" onClick={prevImage}/>
+      <ButtonRight className="size-16 text-white absolute top-1/2 right-4 transform -translate-y-1/2 rounded-full p-2  transition hover:scale-110" onClick={nextImage}/>
     </section>
   );
 };
