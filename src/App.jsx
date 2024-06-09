@@ -1,5 +1,6 @@
 import './App.css';
 import logo from './assets/sonkei-logo.webp';
+import HeaderCarrousel from './components/HeaderCarrousel'
 
 const App = () => {
   return (
@@ -28,6 +29,7 @@ const App = () => {
           </li>
         </ul>
       </nav>
+      <HeaderCarrousel />
     </>
   );
 }
