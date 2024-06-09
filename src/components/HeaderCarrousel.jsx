@@ -107,8 +107,8 @@ const HeaderCarrousel = () => {
       </div>
 
       {/* Botones de siguiente y atrás */}
-      <ButtonLeft className="size-16 text-white absolute top-1/2 left-4 transform -translate-y-1/2 rounded-full p-2 transition hover:scale-110" onClick={prevImage}/>
-      <ButtonRight className="size-16 text-white absolute top-1/2 right-4 transform -translate-y-1/2 rounded-full p-2  transition hover:scale-110" onClick={nextImage}/>
+      <ButtonLeft className="size-12 text-white absolute top-1/2 left-4 transform -translate-y-1/2 rounded-lg transition hover:scale-110 hover:bg-yellow hover:text-black cursor-pointer" onClick={prevImage}/>
+      <ButtonRight className="size-12 text-white absolute top-1/2 right-4 transform -translate-y-1/2 rounded-lg transition hover:scale-110 hover:bg-yellow hover:text-black cursor-pointer" onClick={nextImage}/>
     </section>
   );
 };
