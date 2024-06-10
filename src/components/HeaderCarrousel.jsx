@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
-import ButtonLeft from "../assets/chevron-left.svg"
-import ButtonRight from "../assets/chevron-right.svg"
+import ButtonLeft from "../assets/icons/chevron-left.svg"
+import ButtonRight from "../assets/icons/chevron-right.svg"
 import SonkeiLogo from "../assets/sonkei-logo.webp"
 
 /**
@@ -9,7 +9,7 @@ import SonkeiLogo from "../assets/sonkei-logo.webp"
  *
  * @returns {JSX.Element} Carrusel de imágenes.
  */
-const HeaderCarrousel = () => {
+export const HeaderCarrousel = () => {
   // Estado para almacenar las imágenes obtenidas de la API
   const [images, setImages] = useState([])
   // Estado para controlar el estado de carga de las imágenes
@@ -136,5 +136,3 @@ const HeaderCarrousel = () => {
     </section>
   );
 }
-
-export default HeaderCarrousel
