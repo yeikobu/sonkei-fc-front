@@ -120,7 +120,7 @@ const HeaderCarrousel = () => {
           </div>
         </div>
 
-        <button className="px-2 py-2 bg-blue rounded-lg text-white font-semibold transition hover:scale-110 hover:bg-yellow hover:shadow-lg hover:text-black">Contáctanos</button>
+        <button className="px-2 py-2 bg-blue rounded-lg text-white font-semibold transition duration-500 hover:scale-110 hover:bg-yellow hover:shadow-lg hover:text-black">Contáctanos</button>
       </div>
 
       {/* Botones de siguiente y atrás */}
