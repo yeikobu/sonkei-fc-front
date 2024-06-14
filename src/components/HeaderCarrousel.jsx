@@ -57,7 +57,7 @@ export const HeaderCarrousel = () => {
 
   //useEffect para configurar y limpiar el intervalo que cambia las imágenes del carrusel.
   //Este efecto se ejecuta cada vez que el array de imágenes cambia.
-  // Configura un intervalo que se ejecuta cada 2200 milisegundos (2.2 segundos)
+  // Configura un intervalo que se ejecuta cada 2500 milisegundos (2.2 segundos)
   useEffect(() => {
     // Si hay imagenes, se configura el intervalo para cambiar el índice
     if (images.length > 0) {
