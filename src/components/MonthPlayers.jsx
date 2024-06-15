@@ -81,9 +81,9 @@ export const MonthPlayers = () => {
                             <img src={mvp.img} className="rounded-full size-72 object-cover" />
                             <div className="absolute inset-0 flex flex-col items-center justify-end">
                                 <div className="bg-black/70 mb-7 p-1 rounded-lg">
-                                    <div className="flex flex-row justify-center">
-                                        <Diamond />
-                                        <p>{mvp.date}</p>
+                                    <div className="flex flex-row justify-center items-center gap-1">
+                                        <Diamond className="text-yellow text-sm"/>
+                                        <p className="font-bold text-md">{mvp.date}</p>
                                     </div>
                                     <h3 className="text-yellow text-xl font-bold">{mvp.name}</h3>
                                     <div className="flex flex-row gap-4 items-center justify-around">
