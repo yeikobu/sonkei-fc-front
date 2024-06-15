@@ -84,20 +84,6 @@ export const HeaderCarrousel = () => {
         return <div>Error: {error.message}</div>;
     }
 
-
-    // Función para mostrar la imagen anterior
-    const prevImage = () => {
-        setCurrentIndex(
-            (prevIndex) => (prevIndex - 1 + images.length) % images.length
-        );
-    };
-
-
-    // Función para mostrar la siguiente imagen
-    const nextImage = () => {
-        setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-    };
-
     // Renderiza el carrusel de imágenes
     return (
         <section className="relative overflow-hidden w-full" id="inicio">
@@ -133,17 +119,6 @@ export const HeaderCarrousel = () => {
                     Contáctanos
                 </button>
             </div>
-
-            {/* Botones de siguiente y atrás */}
-            <ButtonLeft
-                className="self-center size-12 text-white absolute top-1/2 left-2 -translate-y-1/2 rounded-lg transition hover:scale-110 hover:bg-yellow hover:text-black cursor-pointer"
-                onClick={prevImage}
-            />
-
-            <ButtonRight
-                className="self-center size-12 text-white absolute top-1/2 right-2 -translate-y-1/2 rounded-lg transition hover:scale-110 hover:bg-yellow hover:text-black cursor-pointer"
-                onClick={nextImage}
-            />
         </section>
     );
 };
