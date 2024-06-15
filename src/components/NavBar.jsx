@@ -13,7 +13,7 @@ export const NavBar = () => {
 
   return (
     <>
-      <nav className="no-underline flex flex-row justify-between items-center text-wrap w-full sticky text-white font-bold p-2 bg-black z-10">
+      <nav className="no-underline flex flex-row justify-between items-center text-wrap w-full fixed text-white font-bold p-2 bg-black z-10">
         <a href="/">
           <img
             src={logo}
