@@ -1,4 +1,6 @@
 import { useState, useEffect } from "react";
+import ButtonLeft from "../assets/icons/chevron-left.svg";
+import ButtonRight from "../assets/icons/chevron-right.svg";
 
 export const MonthPlayers = () => {
     //Estado para almacenar todos los mvps
@@ -44,8 +46,8 @@ export const MonthPlayers = () => {
         getMvps();
     }, []);
 
-     // Muestra un mensaje de carga mientras las imágenes están siendo obtenidas
-     if (loading) {
+    // Muestra un mensaje de carga mientras las imágenes están siendo obtenidas
+    if (loading) {
         return <div className="text-black pt-40">Loading...</div>;
     }
 
@@ -55,22 +57,51 @@ export const MonthPlayers = () => {
         return <div>Error: {error.message}</div>;
     }
 
+     // Función para avanzar al siguiente jugador
+     const nextPlayer = () => {
+        setCurrentIndex((prevIndex) => (prevIndex + 1) % mvps.length);
+    };
+
+    // Función para retroceder al jugador anterior
+    const prevPlayer = () => {
+        setCurrentIndex((prevIndex) => (prevIndex - 1 + mvps.length) % mvps.length);
+    };
+
+
     return (
         <section className="relative overflow-hidden w-full">
-            <h1 className="text-black text-5xl font-bold pt-6">Jugador del mes</h1>
+            <h1 className="text-black text-5xl font-bold pt-20 pb-10">Jugador del mes</h1>
 
-            {mvps.map((mvp) => (
-                <div key={mvp.id} className="relative size-72 overflow-hidden m-auto">
-                    <img src={mvp.img} className="rounded-full size-72 object-cover" />
-                    <div className="absolute inset-0 flex flex-col items-center justify-end">
-                        <h3 className="text-black">{mvp.name}</h3>
-                        <div className="flex flex-row items-center justify-around">
-                            <p>{mvp.category == 1 ? "Profesional" : mvp.category == 2 ? "Juvenil" : "Niño"}</p>
-                            <p>{mvp.award}</p>
+            <div className="relative w-full h-full flex items-center justify-center overflow-hidden pt-10">
+                <div className="relative lg:w-[37%] w-full h-full flex items-center transition-transform duration-700"
+                    style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
+                    {mvps.map((mvp) => (
+                        <div key={mvp.id} className="relative w-full h-full flex-shrink-0 flex items-center justify-center">
+                            <img src={mvp.img} className="rounded-full size-72 object-cover" />
+                            <div className="absolute inset-0 flex flex-col items-center justify-end">
+                                <div className="bg-black/30 mb-7 p-1 rounded-md">
+                                    <h3 className="text-yellow text-lg font-bold">{mvp.name}</h3>
+                                    <div className="flex flex-row gap-4 items-center justify-around">
+                                        <p className="text-yellow font-bold">{mvp.category == 1 ? "Profesional" : mvp.category == 2 ? "Juvenil" : "Niño"}</p>
+                                        <p className="text-white font-bold">{mvp.award}</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
+                    ))}
                 </div>
-            ))}
+            </div>
+
+
+            <ButtonLeft
+                className="self-center size-12 text-blue absolute top-2/3 left-4 -translate-y-1/2 rounded-lg transition hover:scale-110 hover:bg-yellow hover:text-black cursor-pointer"
+                onClick={prevPlayer}
+            />
+
+            <ButtonRight
+                className="self-center size-12 text-blue absolute top-2/3 right-4 -translate-y-1/2 rounded-lg transition hover:scale-110 hover:bg-yellow hover:text-black cursor-pointer"
+                onClick={nextPlayer}
+            />
         </section>
     );
 };
