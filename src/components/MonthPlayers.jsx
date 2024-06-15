@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import ButtonLeft from "../assets/icons/chevron-left.svg";
 import ButtonRight from "../assets/icons/chevron-right.svg";
+import Diamond from "../assets/icons/diamond.svg"
 
 export const MonthPlayers = () => {
     //Estado para almacenar todos los mvps
@@ -79,8 +80,12 @@ export const MonthPlayers = () => {
                         <div key={mvp.id} className="relative w-full h-full flex-shrink-0 flex items-center justify-center">
                             <img src={mvp.img} className="rounded-full size-72 object-cover" />
                             <div className="absolute inset-0 flex flex-col items-center justify-end">
-                                <div className="bg-black/30 mb-7 p-1 rounded-md">
-                                    <h3 className="text-yellow text-lg font-bold">{mvp.name}</h3>
+                                <div className="bg-black/70 mb-7 p-1 rounded-lg">
+                                    <div className="flex flex-row justify-center">
+                                        <Diamond />
+                                        <p>{mvp.date}</p>
+                                    </div>
+                                    <h3 className="text-yellow text-xl font-bold">{mvp.name}</h3>
                                     <div className="flex flex-row gap-4 items-center justify-around">
                                         <p className="text-yellow font-bold">{mvp.category == 1 ? "Profesional" : mvp.category == 2 ? "Juvenil" : "Niño"}</p>
                                         <p className="text-white font-bold">{mvp.award}</p>
@@ -94,12 +99,12 @@ export const MonthPlayers = () => {
 
 
             <ButtonLeft
-                className="self-center size-12 text-blue absolute top-2/3 left-4 -translate-y-1/2 rounded-lg transition hover:scale-110 hover:bg-yellow hover:text-black cursor-pointer"
+                className="self-center size-12 text-white bg-blue shadow shadow-black/60 absolute top-2/3 left-4 -translate-y-1/2 rounded-lg transition hover:scale-110 hover:bg-yellow hover:text-black cursor-pointer"
                 onClick={prevPlayer}
             />
 
             <ButtonRight
-                className="self-center size-12 text-blue absolute top-2/3 right-4 -translate-y-1/2 rounded-lg transition hover:scale-110 hover:bg-yellow hover:text-black cursor-pointer"
+                className="self-center size-12 text-white bg-blue shadow shadow-black/60 absolute top-2/3 right-4 -translate-y-1/2 rounded-lg transition hover:scale-110 hover:bg-yellow hover:text-black cursor-pointer"
                 onClick={nextPlayer}
             />
         </section>
