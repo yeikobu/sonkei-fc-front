@@ -77,7 +77,7 @@ export const MonthPlayers = () => {
                 <div className="relative lg:w-[37%] w-full h-full flex items-center transition-transform duration-700"
                     style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
                     {mvps.map((mvp) => (
-                        <div key={mvp.id} className="relative w-full h-full flex-shrink-0 flex items-center justify-center">
+                        <div key={mvp.id + mvp.date} className="relative w-full h-full flex-shrink-0 flex items-center justify-center">
                             <img src={mvp.img} className="rounded-full size-72 object-cover" />
                             <div className="absolute inset-0 flex flex-col items-center justify-end">
                                 <div className="bg-black/70 mb-7 p-1 rounded-lg">
