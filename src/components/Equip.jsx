@@ -95,8 +95,8 @@ export const Equip = () => {
     };
 
     return (
-        <section className="bg-black relative overflow-hidden w-full mt-10" id='equipo'>
-            <h1 className="text-white text-5xl font-bold pt-20 pb-10">Equipo</h1>
+        <section className="bg-black relative overflow-hidden w-full py-20" id='equipo'>
+            <h1 className="text-white text-5xl font-bold pb-10">Equipo</h1>
 
             <div className="relative w-full h-full flex items-center justify-center overflow-hidden pt-10">
                 <div className="relative lg:w-[20%] w-full h-full flex items-center transition-transform duration-700"
@@ -121,12 +121,12 @@ export const Equip = () => {
 
 
             <ButtonLeft
-                className="self-center size-12 text-white absolute top-2/3 left-4 -translate-y-1/2 rounded-lg transition hover:scale-110 hover:bg-yellow hover:text-black cursor-pointer"
+                className="self-center size-12 text-white absolute top-1/2 left-4 -translate-y-1/2 rounded-lg transition hover:scale-110 hover:bg-yellow hover:text-black cursor-pointer"
                 onClick={prevPlayer}
             />
 
             <ButtonRight
-                className="self-center size-12 text-white absolute top-2/3 right-4 -translate-y-1/2 rounded-lg transition hover:scale-110 hover:bg-yellow hover:text-black cursor-pointer"
+                className="self-center size-12 text-white absolute top-1/2 right-4 -translate-y-1/2 rounded-lg transition hover:scale-110 hover:bg-yellow hover:text-black cursor-pointer"
                 onClick={nextPlayer}
             />
         </section>

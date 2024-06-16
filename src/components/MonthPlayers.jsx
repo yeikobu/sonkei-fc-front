@@ -70,8 +70,8 @@ export const MonthPlayers = () => {
 
 
     return (
-        <section className="relative overflow-hidden w-full">
-            <h1 className="text-black text-5xl font-bold pt-20 pb-10">Jugador del mes</h1>
+        <section className="relative overflow-hidden w-full py-20">
+            <h1 className="text-black text-5xl font-bold pb-10">Jugador del mes</h1>
 
             <div className="relative w-full h-full flex items-center justify-center overflow-hidden pt-10">
                 <div className="relative lg:w-[37%] w-full h-full flex items-center transition-transform duration-700"
