@@ -121,12 +121,12 @@ export const Equip = () => {
 
 
             <ButtonLeft
-                className="self-center size-12 text-white shadow shadow-black/60 absolute top-2/3 left-4 -translate-y-1/2 rounded-lg transition hover:scale-110 hover:bg-yellow hover:text-black cursor-pointer"
+                className="self-center size-12 text-white absolute top-2/3 left-4 -translate-y-1/2 rounded-lg transition hover:scale-110 hover:bg-yellow hover:text-black cursor-pointer"
                 onClick={prevPlayer}
             />
 
             <ButtonRight
-                className="self-center size-12 text-whiteshadow shadow-black/60 absolute top-2/3 right-4 -translate-y-1/2 rounded-lg transition hover:scale-110 hover:bg-yellow hover:text-black cursor-pointer"
+                className="self-center size-12 text-white absolute top-2/3 right-4 -translate-y-1/2 rounded-lg transition hover:scale-110 hover:bg-yellow hover:text-black cursor-pointer"
                 onClick={nextPlayer}
             />
         </section>
