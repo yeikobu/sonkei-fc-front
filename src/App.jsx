@@ -5,6 +5,7 @@ import { MonthPlayers } from './components/MonthPlayers';
 import { Equip } from './components/Equip';
 import { AboutUs } from './components/AboutUs';
 import { UpcomingTrainings } from './components/UpcomingTrainings';
+import { Testimonies } from './components/Testimonies';
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
       <Equip />
       <AboutUs />
       <UpcomingTrainings />
+      <Testimonies />
     </main>
   );
 }
