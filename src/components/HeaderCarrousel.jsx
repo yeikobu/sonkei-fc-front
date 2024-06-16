@@ -1,6 +1,4 @@
 import { useState, useEffect } from "react";
-import ButtonLeft from "../assets/icons/chevron-left.svg";
-import ButtonRight from "../assets/icons/chevron-right.svg";
 import SonkeiLogo from "../assets/sonkei-logo.webp";
 
 /**
