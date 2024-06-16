@@ -1,6 +1,6 @@
 export const AboutUs = () => {
     return (
-        <section id="#history" className="flex flex-col justify-center items-center text-black py-20 px-4 sm:px-6 lg:px-8" id="about-us">
+        <section id="#history" className="flex flex-col justify-center items-center text-black py-20 px-4 sm:px-6 lg:px-8">
                 <h1 className="text-5xl font-extrabold text-gray-900 pb-10 sm:text-4xl">
                     Nuestra Historia
                 </h1>
