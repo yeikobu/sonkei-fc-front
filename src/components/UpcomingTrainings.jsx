@@ -83,7 +83,7 @@ const Countdown = ({ targetDate, location, category }) => {
     );
 };
 
-//Para especificar los tipos de props que se reciben
+//Para especificar los tipos de props que se reciben (Esto lo puse porque el compilador de typescript me tenía loco con las advertencias)
 Countdown.propTypes = {
     targetDate: PropTypes.string.isRequired,
     location: PropTypes.string.isRequired,
