@@ -6,6 +6,7 @@ import { Equip } from './components/Equip';
 import { AboutUs } from './components/AboutUs';
 import { UpcomingTrainings } from './components/UpcomingTrainings';
 import { Testimonies } from './components/Testimonies';
+import { ContactForm } from './components/Contact';
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
       <AboutUs />
       <UpcomingTrainings />
       <Testimonies />
+      <ContactForm />
     </main>
   );
 }
