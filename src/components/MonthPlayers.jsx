@@ -12,8 +12,8 @@ export const MonthPlayers = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
 
     /**
-     * Función para obtener imágenes desde una API.
-     * Realiza una petición fetch a una URL específica y actualiza el estado con las imágenes obtenidas.
+     * Función para obtener jugadores del mes desde una API.
+     * Realiza una petición fetch a una URL específica y actualiza el estado con los jugadores obtenidos.
      *
      * @async
      * @function getMvps
@@ -40,20 +40,20 @@ export const MonthPlayers = () => {
         }
     };
 
-    //useEffect para obtener las imágenes desde la API cuando el componente se monta.
+    //useEffect para obtener los jugadores del mes desde la API cuando el componente se monta.
     //Este efecto solo se ejecuta una vez, cuando el componente se monta.
     useEffect(() => {
-        //Ejecuta la función para obtener la imágenes
+        //Ejecuta la función para obtener los jugadores del mes
         getMvps();
     }, []);
 
-    // Muestra un mensaje de carga mientras las imágenes están siendo obtenidas
+    // Muestra un mensaje de carga mientras los jugadores están siendo obtenidos
     if (loading) {
         return <div className="text-black pt-40">Loading...</div>;
     }
 
 
-    // Muestra un mensaje de error si ocurrió algún problema al obtener las imágenes
+    // Muestra un mensaje de error si ocurrió algún problema al obtener los jugadores
     if (error) {
         return <div>Error: {error.message}</div>;
     }
