@@ -95,8 +95,8 @@ export const Equip = () => {
     };
 
     return (
-        <section className="bg-black relative overflow-hidden w-full mt-10" id='players'>
-            <h1 className="text-white text-5xl font-bold pt-20 pb-10">Jugadores</h1>
+        <section className="bg-black relative overflow-hidden w-full mt-10" id='equipo'>
+            <h1 className="text-white text-5xl font-bold pt-20 pb-10">Equipo</h1>
 
             <div className="relative w-full h-full flex items-center justify-center overflow-hidden pt-10">
                 <div className="relative lg:w-[20%] w-full h-full flex items-center transition-transform duration-700"
