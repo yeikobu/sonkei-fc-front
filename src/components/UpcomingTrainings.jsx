@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react'
 import PropTypes from 'prop-types';
+import CalendarIcon from '../assets/icons/calendar.svg'
+import LocationIcon from '../assets/icons/location.svg'
 
 const Countdown = ({ targetDate, location, category }) => {
     const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
@@ -36,11 +38,10 @@ const Countdown = ({ targetDate, location, category }) => {
     });
 
     return (
-        <div className="text-black bg-white shadow-lg rounded-lg p-6 m-4 max-w-64">
-            <h2 className="text-xl font-bold mb-2">{category}</h2>
-            <p className="mb-2 text-sm font-semibold">{formattedDate}</p>
-            <p className="mb-4 text-sm font-semibold">{location}</p>
-            <div className="text-md font-bold">
+        <div className="text-black flex flex-col justify-center items-center gap-2 bg-white shadow-lg rounded-lg p-6 m-4 lg:w-[600px] w-[320px]">
+            <h2 className="text-2xl font-bold mb-2">{category}</h2>
+
+             <div className="text-sm font-bold">
                 {Object.keys(timeLeft).length === 0 ? (
                     <span>¡El entrenamiento ha comenzado!</span>
                 ) : (
@@ -50,6 +51,16 @@ const Countdown = ({ targetDate, location, category }) => {
                         </span>
                     ))
                 )}
+            </div>
+
+            <div className='flex flex-row justify-center items-center'>
+                <CalendarIcon className="text-blue"/>
+                <p className="text-xs font-semibold">{formattedDate}</p>
+            </div>
+
+            <div className='flex flex-row items-center'> 
+                <LocationIcon className="text-blue"/>
+                <p className="text-xs font-semibold">{location}</p>
             </div>
         </div>
     );
@@ -101,7 +112,7 @@ export const UpcomingTrainings = () => {
 
     useEffect(() => {
         if (upcomingTrainings.length > 0) {
-            const categories = ['Cadetes', 'Infantiles', 'Juveniles', 'Profesionales'];
+            const categories = ['Profesionales', 'Cadetes', 'Infantiles', 'Juveniles'];
             const now = new Date();
             
             const next = categories.reduce((acc, category) => {
@@ -128,10 +139,10 @@ export const UpcomingTrainings = () => {
     }
 
     return (
-        <div className="bg-black flex flex-col w-full py-20">
+        <div className="bg-black flex flex-col w-full py-20" id='entrenamiento'>
             <h1 className='text-white text-5xl font-bold pb-10'>Próximos entrenamientos</h1>
 
-            <div className='flex flex-row flex-wrap justify-center items-center'>
+            <div className='flex flex-col flex-wrap justify-center items-center'>
                 {Object.entries(nextTrainings).map(([category, training]) => (
                     <Countdown
                         key={category}
