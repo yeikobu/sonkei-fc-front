@@ -3,9 +3,26 @@ import PropTypes from 'prop-types';
 import CalendarIcon from '../assets/icons/calendar.svg'
 import LocationIcon from '../assets/icons/location.svg'
 
+/**
+ * Componente que muestra una cuenta regresiva hasta una fecha objetivo.
+ * 
+ * @component Countdown
+ * @param {Object} props - Propiedades del componente.
+ * @param {string} props.targetDate - La fecha y hora objetivo en formato de cadena.
+ * @param {string} props.location - La ubicación del evento.
+ * @param {string} props.category - La categoría del evento.
+ * @returns {JSX.Element} Un elemento JSX que muestra la cuenta regresiva y la información del evento.
+ */
 const Countdown = ({ targetDate, location, category }) => {
     const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
 
+    /**
+     * Función que calcula el tiempo restante hasta una fecha objetivo.
+     * 
+     * @function calculateTimeLeft
+     * @param {string} targetDate - La fecha y hora objetivo en formato de cadena.
+     * @returns {Object} Un objeto con las unidades de tiempo restantes (días, horas, minutos).
+    */
     function calculateTimeLeft() {
         const difference = +new Date(targetDate) - +new Date();
         let timeLeft = {};
@@ -73,6 +90,12 @@ Countdown.propTypes = {
     category: PropTypes.string.isRequired
 };
 
+/**
+ * Componente que muestra los próximos entrenamientos.
+ * 
+ * @component UpcomingTrainings
+ * @returns {JSX.Element} Un elemento JSX que muestra la lista de próximos entrenamientos.
+ */
 export const UpcomingTrainings = () => {
     const [upcomingTrainings, setUpcomingTrainings] = useState([]);
     const [loading, setLoading] = useState(true);
