@@ -57,7 +57,7 @@ const ContactForm = () => {
     };
 
     return (
-        <div className="bg-black flex flex-col items-center justify-center py-10">
+        <section id='contacto' className="bg-black flex flex-col items-center justify-center py-10">
             <h1 className="text-white text-5xl font-bold pb-10">Formulario de Contacto</h1>
             <form onSubmit={handleSubmit} className="bg-white shadow-lg rounded-lg p-6 w-full max-w-md">
                 <img src={logo} alt="Sonkei - logo" className='size-36 m-auto'/>
@@ -119,7 +119,7 @@ const ContactForm = () => {
                     </div>
                 )}
             </form>
-        </div>
+        </section>
     );
 };
 
